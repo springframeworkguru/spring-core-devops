@@ -20,7 +20,7 @@ public class ExternalPropsPropertySourceTestConfig {
     String jmsServer;
 
     @Value("${guru.jms.port}")
-    String jmsPort;
+    Integer jmsPort;
 
     @Value("${guru.jms.user}")
     String jmsUser;
@@ -40,7 +40,7 @@ public class ExternalPropsPropertySourceTestConfig {
     public FakeJmsBroker fakeJmsBroker(){
         FakeJmsBroker fakeJmsBroker = new FakeJmsBroker();
         fakeJmsBroker.setUrl(jmsServer);
-       // fakeJmsBroker.setPort(jmsPort);
+        fakeJmsBroker.setPort(jmsPort);
         fakeJmsBroker.setUser(jmsUser);
         fakeJmsBroker.setPassword(jmsPassword);
         return fakeJmsBroker;
