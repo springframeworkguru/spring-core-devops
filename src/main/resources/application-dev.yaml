@@ -1,0 +1,4 @@
+guru:
+  springframework:
+    profile:
+      message: This is my DEV profile
