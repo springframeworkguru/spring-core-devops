@@ -1,0 +1,3 @@
+org.jasypt.spring.security3
+org.jasypt.springsecurity3.authentication.encoding
+org.jasypt.springsecurity3.authentication.rememberme
