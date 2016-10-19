@@ -1,0 +1,13 @@
+- provision server
+- add CNAME for subdomain - proddb.exmaple.com
+- open firewall for port 3306
+- install docker
+- start docker service
+- start database
+
+
+docker run -d --name my-container-name /
+-p 3306:3306
+-v /var/lib/mysql:/var/lib/mysql /
+-e MYSQL_ROOT_PASSWORD=spring_guru_root_pwd  /
+mysql/mysql-server:tag
