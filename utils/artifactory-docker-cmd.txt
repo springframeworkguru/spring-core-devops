@@ -1,0 +1,5 @@
+sudo docker run -d --name jfrog_container -p 8081:8081 \
+-v /var/opt/jfrog/artifactory/data:/var/opt/jfrog/artifactory/data \
+-v /var/opt/jfrog/artifactory/logs:/var/opt/jfrog/artifactory/logs \
+-v /var/opt/jfrog/artifactory/etc:/var/opt/jfrog/artifactory/etc \
+docker.bintray.io/jfrog/artifactory-oss:latest
