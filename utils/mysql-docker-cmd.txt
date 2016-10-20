@@ -5,9 +5,24 @@
 - start docker service
 - start database
 
+#Command to start MySQL Docker Container
 
-docker run -d --name my-container-name /
--p 3306:3306
--v /var/lib/mysql:/var/lib/mysql /
--e MYSQL_ROOT_PASSWORD=spring_guru_root_pwd  /
-mysql/mysql-server:tag
+sudo docker run -d --name prod_mysql \
+-p 3306:3306 \
+-v /var/lib/mysql:/var/lib/mysql \
+-e MYSQL_ROOT_PASSWORD=tiger  \
+mysql/mysql-server:latest
+
+#check running images
+sudo docker ps
+
+#Connect to container
+sudo docker exec -it prod_mysql bash
+
+# Connect mySql
+mysql -p
+
+#create database
+CREATE DATABASE springguru
+
+grant all privileges on springguru.* to 'spring_guru_owner'@'localhost' identified by "GuruPassword";
