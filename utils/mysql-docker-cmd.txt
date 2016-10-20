@@ -26,3 +26,17 @@ mysql -p
 CREATE DATABASE springguru
 
 grant all privileges on springguru.* to 'spring_guru_owner'@'localhost' identified by "GuruPassword";
+
+
+#Bash env
+export SPRING_DATASOURCE_URL=jdbc:mysql://52.91.138.232:3306/springguru
+export SPRING_DATASOURCE_USERNAME=spring_guru_owner
+export SPRING_DATASOURCE_PASSWORD="GuruPassword"
+
+#User update
+DROP USER 'spring_guru_owner'@'localhost';
+grant all privileges on springguru.* to 'spring_guru_owner'@'%' identified by "GuruPassword";
+FLUSH PRIVILEGES;
+
+#run command
+java -jar ./spring-core-devops-0.0.1.jar --spring.jpa.hibernate.ddl-auto=update
