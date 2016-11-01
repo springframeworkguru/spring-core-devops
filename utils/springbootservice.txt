@@ -1,0 +1,25 @@
+1. change to root - sudo su
+2. cd /etc/systemd/system
+3. use vi to create file below
+4. run systemctl daemon-reload (to reload service defs)
+5. to start on boot run: systemctl enable springboot.service
+6. to start: systemctl start springboot
+
+## View console output
+tail -f  /var/log/messages
+
+### File name springboot.service ####
+
+[Unit]
+Description=Spring Boot Service
+After=syslog.target
+
+[Service]
+User=ec2-user
+# set dir to location of application.properties and springboot jar
+WorkingDirectory=/home/ec2-user
+ExecStart=/bin/java -jar spring-core-devops-0.0.1.jar
+SuccessExitStatus=143
+
+[Install]
+WantedBy=multi-user.target
