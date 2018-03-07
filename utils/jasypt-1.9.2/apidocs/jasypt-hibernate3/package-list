@@ -1,0 +1,6 @@
+org.jasypt.hibernate.connectionprovider
+org.jasypt.hibernate.encryptor
+org.jasypt.hibernate.type
+org.jasypt.hibernate3.connectionprovider
+org.jasypt.hibernate3.encryptor
+org.jasypt.hibernate3.type
