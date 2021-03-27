@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 public class NonProfileBean {
 
     @Autowired
-    public NonProfileBean(@Value("${guru.springframework.profile.message}") String msg) {
+    public NonProfileBean(@Value("Non profile Bean") String msg) {
         System.out.println("**********"  + msg + "************");
 
     }
